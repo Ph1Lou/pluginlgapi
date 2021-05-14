@@ -87,7 +87,7 @@ public interface WereWolfAPI {
 
 
     /**
-     * allow to get playerww with uuid
+     * allows to get playerww with uuid
      * @param uuid uuid of the player
      * @return the instance of playerWW
      */
