@@ -21,19 +21,52 @@ import java.util.UUID;
 
 public interface IPlayerWW {
 
+    /**
+     * increase playerWW max health by the specified value
+     * @param heart the specified value
+     */
     void addPlayerMaxHealth(int heart);
 
+    /**
+     * decrease playerWW max health by the specified value
+     * @param heart the specified value
+     */
     void removePlayerMaxHealth(int heart);
 
+    /**
+     * add the specified amount of heart to the playerWW
+     * @param heart the specified amount of heart
+     */
     void addPlayerHealth(int heart);
 
+    /**
+     * remove the specified amount of heart to the playerWW
+     * @param heart the specified amount of heart
+     */
     void removePlayerHealth(int heart);
 
+    /**
+     * Send a message to a playerWW with a String
+     * @param message a String
+     */
     @Deprecated
     void sendMessage(String message);
 
+    /**
+     * Send a message to a player with a langage key; %s will be replaced by
+     * args
+     * @param key the langage key
+     * @param args the args that replace %s
+     */
     void sendMessageWithKey(String key,Object ... args);
 
+    /**
+     * Send a message with a langage key and a sound to a player;
+     * %s will be replaced by args
+     * @param key the langage key
+     * @param sound the sound played
+     * @param args the args that replace %s
+     */
     void sendMessageWithKey(String key, Sound sound, Object ... args);
 
     void sendMessage(TextComponent textComponent);

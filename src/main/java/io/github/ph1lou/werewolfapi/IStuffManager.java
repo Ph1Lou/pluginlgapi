@@ -59,7 +59,8 @@ public interface IStuffManager {
     Map<String, List<ItemStack>> getStuffRoles();
 
     /**
-     * get the stuff inventory of a player in stuff edition mode with his UUID
+     *
+     *  get the stuff inventory of a player in stuff edition mode with his UUID
      * @return a map of UUID as key and Inventory as value
      */
     Map<UUID, Inventory> getTempStuff();
