@@ -1,7 +1,8 @@
 package io.github.ph1lou.werewolfapi;
 
-import io.github.ph1lou.werewolfapi.rolesattributs.IRole;
-import io.github.ph1lou.werewolfapi.rolesattributs.ITransformed;
+import fr.ph1lou.gameapi.rolesattributs.ITransformed;
+import io.github.ph1lou.werewolfapi.enums.Camp;
+import io.github.ph1lou.werewolfapi.rolesattributs.IRoleWW;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +20,9 @@ public class DescriptionBuilder {
     private final List<Supplier<String>> extraLines = new ArrayList<>();
 
     private final WereWolfAPI game;
-    private final IRole role;
+    private final IRoleWW role;
 
-    public DescriptionBuilder(WereWolfAPI game, IRole role){
+    public DescriptionBuilder(WereWolfAPI game, IRoleWW role){
         this.game=game;
         this.role = role;
     }
@@ -64,6 +65,7 @@ public class DescriptionBuilder {
     public String build(){
 
         StringBuilder sb = new StringBuilder();
+        Camp camp = Camp.valueOf(Camp.class,role.getCamp());
 
         sb.append(this.game.translate("werewolf.description.role", this.game.translate(this.role.getDeathRole()) +
                 (!this.role.getDeathRole().equals(this.role.getKey()) ? this.game.translate("werewolf.role.thief.thief", this.game.translate(this.role.getKey())) : "") +
@@ -71,7 +73,7 @@ public class DescriptionBuilder {
                 (this.role.isSolitary() ? this.game.translate("werewolf.end.solitary") : "")));
 
         sb.append(this.game.translate("werewolf.description.camp",
-                this.role.getCamp().getChatColor()+this.game.translate(this.role.getCamp().getKey())));
+                camp.getChatColor()+this.game.translate(camp.getKey())));
 
         sb.append(this.role.getInfected()?
                 this.game.translate("werewolf.description.effect",this.game.translate("werewolf.description.werewolf"))

@@ -1,8 +1,9 @@
 package io.github.ph1lou.werewolfapi.rolesattributs;
 
+import fr.ph1lou.gameapi.enums.StatePlayer;
+import fr.ph1lou.gameapi.rolesattributs.IPower;
 import io.github.ph1lou.werewolfapi.IPlayerWW;
 import io.github.ph1lou.werewolfapi.WereWolfAPI;
-import io.github.ph1lou.werewolfapi.enums.StatePlayer;
 import io.github.ph1lou.werewolfapi.events.roles.SelectionEndEvent;
 import org.bukkit.event.EventHandler;
 
@@ -16,15 +17,15 @@ public abstract class RoleWithLimitedSelectionDuration extends RoleVillage imple
     @EventHandler
     public void onSelectionEnd(SelectionEndEvent event) {
 
-        if (!hasPower()) return;
+        if (!this.hasPower()) return;
 
-        if(!getPlayerWW().isState(StatePlayer.ALIVE)){
+        if(!this.getPlayer().isState(StatePlayer.ALIVE)){
             return;
         }
 
-        setPower(false);
+        this.setPower(false);
 
-        getPlayerWW().sendMessageWithKey("werewolf.check.end_selection");
+        this.getPlayer().sendMessageWithKey("werewolf.check.end_selection");
     }
 
     @Override

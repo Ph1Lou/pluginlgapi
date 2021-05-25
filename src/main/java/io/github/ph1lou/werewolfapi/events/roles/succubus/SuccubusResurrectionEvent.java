@@ -1,7 +1,7 @@
 package io.github.ph1lou.werewolfapi.events.roles.succubus;
 
+import fr.ph1lou.gameapi.events.game.life_cycle.ResurrectionEvent;
 import io.github.ph1lou.werewolfapi.IPlayerWW;
-import io.github.ph1lou.werewolfapi.events.game.life_cycle.ResurrectionEvent;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 

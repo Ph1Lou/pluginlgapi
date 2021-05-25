@@ -1,7 +1,8 @@
 package io.github.ph1lou.werewolfapi;
 
 import fr.minuskube.inv.InventoryManager;
-import io.github.ph1lou.werewolfapi.registers.IRegisterManager;
+import fr.ph1lou.gameapi.ILanguageManager;
+import fr.ph1lou.gameapi.registers.IRegisterManager;
 
 /**
  * @author Ph1Lou

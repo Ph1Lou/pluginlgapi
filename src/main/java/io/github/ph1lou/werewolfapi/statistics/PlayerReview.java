@@ -1,8 +1,9 @@
 package io.github.ph1lou.werewolfapi.statistics;
 
 import io.github.ph1lou.werewolfapi.ILover;
-import io.github.ph1lou.werewolfapi.enums.LoverType;
 import io.github.ph1lou.werewolfapi.IPlayerWW;
+import io.github.ph1lou.werewolfapi.enums.LoverType;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
